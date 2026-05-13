@@ -30,6 +30,15 @@ app.get("/students/:id", (req, res) => {
 app.post("/students", (req, res) => {
     const { name, age, course } = req.body;
 
+    //validation
+    if(!name || !age || !course){
+        return res.status(400).json({ message: "Name, age and course are required" });
+    }
+
+    if(typeof age !== "number" || age <= 0 || age > 100){
+        return res.status(400).json({ message: "Age must be a positive number between 1 and 100" });
+    }
+
     const newStudent = {
         id: students.length + 1,
         name,
