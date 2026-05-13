@@ -41,6 +41,25 @@ app.post("/students", (req, res) => {
     res.status(201).json(newStudent);
 });
 
+// PUT — update a student
+app.put("/students/:id", (req, res) => {
+    const id      = parseInt(req.params.id);
+    const index   = students.findIndex(s => s.id === id);
+
+    if (index === -1) {
+        return res.status(404).json({ message: "Student not found" });
+    }
+
+    const { name, age, course } = req.body;
+
+    // update only fields that were sent
+    if (name)   students[index].name   = name;
+    if (age)    students[index].age    = age;
+    if (course) students[index].course = course;
+
+    res.json(students[index]);
+});
+
 // DELETE — remove a student
 app.delete("/students/:id", (req, res) => {
     const id    = parseInt(req.params.id);
