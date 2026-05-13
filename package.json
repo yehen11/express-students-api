@@ -1,0 +1,24 @@
+{
+  "name": "express-students-api",
+  "version": "1.0.0",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yehen11/express-students-api.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/yehen11/express-students-api/issues"
+  },
+  "homepage": "https://github.com/yehen11/express-students-api#readme",
+  "description": "",
+  "dependencies": {
+    "express": "^5.2.1"
+  }
+}
